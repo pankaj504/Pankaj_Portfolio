@@ -81,6 +81,7 @@ section {
 
 	min-height: 100vh;
 	padding: 8rem 9% 2rem;
+	
 }
 .home {
 	/* border: 2px solid red; */
@@ -88,7 +89,7 @@ section {
 	display: flex;
 	align-items: center;
 	padding: 0 2%;
-	background: url("/interview/22711027-Photoroom.png-Photoroom.png") no-repeat;
+	background: url("/22711027-Photoroom.png-Photoroom.png") no-repeat;
 	background-size: 30%;
 	background-position: 90% 20%;
 	/* border: 3px solid rgb(129, 6, 253); */
