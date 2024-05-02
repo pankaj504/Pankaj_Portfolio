@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
@@ -43,16 +44,43 @@ body {
 	/* z-index: 100; */
 	transition: 0.3s;
 }
+.header .logo::before{
+	content:  "";
+	position: absolute;
+	top:      calc( 100% - 2px );
+	width:    100%;
+	height:   2px;
+	background-color: #cf0000;
+	transform-origin: center center;
+	transform: scaleX( 0 );
+	
+	animation: line-animation 3s ease infinite alternate;
+
+}
 
 .header.sticky {
 	background: var(--bg-clr);
-	/* background: red; */
 }
 .logo {
 	position: relative;
-	font-size: 2.5rem;
+	font-size: 3.5rem;
 	color: var(--text-clr);
 	font-weight: bold;
+	animation: clip-path-reveal-1 3s ease infinite alternate;
+
+}
+@keyframes line-animation {
+  0% { transform: scaleX( 0 ); }
+  15% { transform: scaleX( 0 ); }
+  20%, 25% { transform: scaleX( 1 ); top: calc( 100% - 2px ); }
+  50% { transform: scaleX( 1 ); top: 0px; }
+  70% { transform: scaleX( 0.2 ); top: 0px; }
+  80%, 100% { transform: scaleX( 0.2 ); top: 0px; }
+}
+
+@keyframes clip-path-reveal-1 {
+  0%, 25% { clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%); }
+  50% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
 }
 .navbar {
 	position: relative;
@@ -81,20 +109,19 @@ section {
 
 	min-height: 100vh;
 	padding: 8rem 9% 2rem;
-	
 }
 .home {
 	/* border: 2px solid red; */
-
 	display: flex;
 	align-items: center;
 	padding: 0 2%;
 	background: url("/Pankaj_Portfolio/22711027-Photoroom.png-Photoroom.png") no-repeat;
 	background-size: 30%;
 	background-position: 90% 20%;
-	/* border: 3px solid rgb(129, 6, 253); */
 }
 .home-content {
+	/* border: 2px solid red; */
+
 	max-width: 45rem;
 	z-index: 99;
 }
@@ -124,15 +151,10 @@ section {
 		#ff1361 67%,
 		#fff800 100%
 	);
-	/* background-clip: border-box; */
 	background-size: 200% auto;
-	/* color: #fff; */
-	/* background-clip: text; */
-	/* text-fill-color: transparent; */
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	animation: textclip 2s linear infinite;
-	/* display: inline-block; */
 	font-size: 2.6rem;
 }
 @keyframes textclip {
@@ -143,9 +165,9 @@ section {
 
 .home-content p {
 	position: relative;
-	font-size: 1.3rem;
+	font-size: 1.1rem;
 	margin: 2rem 0 4rem;
-	line-height: 2rem;
+	line-height: 1.5rem;
 	letter-spacing: 0.8px;
 }
 .btn-box {
@@ -330,7 +352,8 @@ span {
 }
 .about-content p {
 	position: relative;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
+	font-weight: 100;
 	margin: 2rem 0 3rem;
 }
 .btn-box.btns {
@@ -372,17 +395,19 @@ span {
 .education-box .education-content {
 	position: relative;
 	padding-left: 2rem;
+	
 }
 .education-box .education-content ::before {
-	content: "";
+	content: ""; 
 	/* border: 2px solid red; */
 	position: absolute;
 	top: 0;
-	left: -3.1rem;
+	left: -7px;
 	width: 1.5rem;
 	height: 1.5rem;
 	background: var(--main-clr);
 	border-radius: 50%;
+	
 }
 .education-content .content {
 	position: relative;
@@ -401,8 +426,8 @@ span {
 	height: 100%;
 	background: var(--sec-bg-clr);
 	z-index: -1;
-	/* transition: 0.2s; */
-	/* border: none; */
+	transition: 0.2s;
+	border: none;
 
 	border-radius: 0;
 }
@@ -423,6 +448,10 @@ span {
 .education-content .content p {
 	font-size: 1.6rem;
 	padding-top: 0.5rem;
+}
+.education-content .content li{
+	margin-top: 1rem;
+	font-size: 1.5rem;
 }
 /* skillss css */
 .skills {
