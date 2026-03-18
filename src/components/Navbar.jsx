@@ -31,11 +31,11 @@ export default function Navbar() {
     { icon: <Mail size={20} />, label: "Contact", href: "#contact" },
   ];
 
-  const socialItems = [
-    { icon: <FaGithub size={18} />, href: "https://github.com/pankaj504", label: "GitHub" },
-    { icon: <LiaLinkedin size={18} />, href: "https://www.linkedin.com/in/pankaj-lohani-dev", label: "LinkedIn" },
-    { icon: <TiSocialInstagram size={18} />, href: "https://www.instagram.com/panku.lohani/?utm_source=qr&igsh=eG9uNTZuMWdtcHZl#", label: "Instagram" },
-  ];
+  // const socialItems = [
+  //   { icon: <FaGithub size={18} />, href: "https://github.com/pankaj504", label: "GitHub" },
+  //   { icon: <LiaLinkedin size={18} />, href: "https://www.linkedin.com/in/pankaj-lohani-dev", label: "LinkedIn" },
+  //   { icon: <TiSocialInstagram size={18} />, href: "https://www.instagram.com/panku.lohani/?utm_source=qr&igsh=eG9uNTZuMWdtcHZl#", label: "Instagram" },
+  // ];
 
   return (
     <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300">
@@ -70,7 +70,7 @@ export default function Navbar() {
         <div className="w-px h-6 bg-white/10 mx-2" />
 
         {/* Social Items */}
-        <div className="flex items-center gap-1">
+        {/* <div className="flex items-center gap-1">
           {socialItems.map((item) => (
             <a
               key={item.label}
@@ -85,7 +85,7 @@ export default function Navbar() {
               </span>
             </a>
           ))}
-        </div>
+        </div> */}
 
       </div>
     </nav>
